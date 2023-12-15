@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista para la tabla de amortización -->
+        <record id="view_amortization_table_form" model="ir.ui.view">
+            <field name="name">amortization.table.form</field>
+            <field name="model">credit.amortization</field>
+            <field name="arch" type="xml">
+                <!-- Define la interfaz de la tabla de amortización aquí -->
+            </field>
+        </record>
+
+        <!-- Acción para ver la tabla de amortización -->
+        <record id="action_amortization_table" model="ir.actions.act_window">
+            <field name="name">Tabla de Amortización</field>
+            <field name="res_model">amortization.view</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Vista para el estado de cuenta -->
+        <record id="view_account_statement_form" model="ir.ui.view">
+            <field name="name">account.statement.form</field>
+            <field name="model">cuenta.account_statement</field>
+            <field name="arch" type="xml">
+                <!-- Define la interfaz del estado de cuenta aquí -->
+            </field>
+        </record>
+
+        <!-- Acción para ver el estado de cuenta -->
+        <record id="action_account_statement" model="ir.actions.act_window">
+            <field name="name">Estado de Cuenta</field>
+            <field name="res_model">account.view</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menú para las operaciones de créditos -->
+        <menuitem id="menu_credit_operations" name="Operaciones de Créditos"/>
+        <menuitem id="menu_amortization" name="Tabla de Amortización" parent="menu_credit_operations"
+                  action="action_amortization_table"/>
+        <menuitem id="menu_account_statement" name="Estado de Cuenta" parent="menu_credit_operations"
+                  action="action_account_statement"/>
+    </data>
+</odoo>
